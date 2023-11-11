@@ -15,6 +15,7 @@
 		BDDEC4632AFFE40A00131A2F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDEC4622AFFE40A00131A2F /* DataController.swift */; };
 		BDDEC4672AFFE67200131A2F /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDEC4662AFFE67200131A2F /* AddFoodView.swift */; };
 		BDDEC4692AFFE83400131A2F /* TimeFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDEC4682AFFE83400131A2F /* TimeFormatting.swift */; };
+		BDDEC46C2B001AED00131A2F /* EditFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDEC46B2B001AED00131A2F /* EditFoodView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BDDEC4622AFFE40A00131A2F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		BDDEC4662AFFE67200131A2F /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
 		BDDEC4682AFFE83400131A2F /* TimeFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatting.swift; sourceTree = "<group>"; };
+		BDDEC46B2B001AED00131A2F /* EditFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				BDDEC4512AFFE33300131A2F /* ContentView.swift */,
 				BDDEC4662AFFE67200131A2F /* AddFoodView.swift */,
+				BDDEC46B2B001AED00131A2F /* EditFoodView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				BDDEC4632AFFE40A00131A2F /* DataController.swift in Sources */,
 				BDDEC4502AFFE33300131A2F /* KalorienApp.swift in Sources */,
 				BDDEC4612AFFE36F00131A2F /* FoodModel.xcdatamodeld in Sources */,
+				BDDEC46C2B001AED00131A2F /* EditFoodView.swift in Sources */,
 				BDDEC4692AFFE83400131A2F /* TimeFormatting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

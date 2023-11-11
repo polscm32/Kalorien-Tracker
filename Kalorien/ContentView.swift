@@ -25,18 +25,63 @@ struct ContentView: View {
                     .padding(.horizontal)
                 List {
                     ForEach(food) { food in
-                        NavigationLink(destination: Text("\(food.calories)")) {
-                            
+                        NavigationLink(destination: EditFoodView(food: food)) {
+                            HStack {
+                                VStack(alignment: .leading, spacing: 6) {
+                                    Text(food.name!)
+                                        .bold()
+                                    
+                                    Text("\(Int(food.calories))") + Text(" Kalorien").foregroundColor(.red)
+                                }
+                                Spacer()
+                                Text(calcTimeSince(date: food.date!))
+                                    .foregroundColor(.gray)
+                                    .italic()
+                                //force unwrap is possible here cause its never nil because we provided a default value for food in core data
+                            }
                         }
                     }
+                    .onDelete(perform: deleteFood)
                 }
+                .listStyle(.plain)
             }
             .navigationTitle("Kalorien")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showingAddView.toggle()
+                    } label: {
+                        Label("Add Food", systemImage: "plus.circle")
+                    }
+                }
+                ToolbarItem(placement: .topBarLeading) {
+                   EditButton()
+                }
+            }
+            .sheet(isPresented: $showingAddView, content: {
+                AddFoodView()
+            })
+        }
+        .navigationViewStyle(.stack)
+    }
+    
+    private func deleteFood(offsets: IndexSet) {
+        withAnimation {
+            //delete at index
+            offsets.map { food[$0] }.forEach(managedObject.delete)
+            //save the delete
+            DataController().save(context: managedObject)
         }
     }
     
     private func totalCaloriesToday() -> Double {
-        return 0.0
+        var caloriesToday : Double = 0
+        for item in food {
+            if Calendar.current.isDateInToday(item.date!) {
+                caloriesToday += item.calories
+            }
+        }
+        return caloriesToday
     }
 }
 
